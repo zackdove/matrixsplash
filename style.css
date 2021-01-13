@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'Maison Neue';
+  src: url("./fonts/hinted-MaisonNeue-Book.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+	font-family: "Maison Neue";
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	font-size: 3.8rem;
+}
+
+@media only screen and (max-width: 600px){
+	body{
+		font-size: 3rem;
+	}
+}
+
+
+
+#splashTitle{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 1;
+	color: white;
+	text-align: center;
+}
+
+#splashTitle p {
+	max-width: 60vw;
+	color: white;
+	/* filter: invert(100%); */
+	mix-blend-mode: difference;
+}
+
+@media only screen and (max-width: 600px){
+	#splashTitle p {
+		max-width: 70vw;
+	}
+}
+
+
+#planeContainer{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: black;
+	perspective: 140vw;
+}
+
+#plane1{
+	position: absolute;
+	width: 150vw;
+	height: 90vw;
+	transform-style: preserve-3d;
+	transform: translateZ(-30vw) translateY(26vh) translateX(-56vw) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;
+	background-image: url("halcyon1.gif");
+	background-color: yellow;
+	background-position: center;
+	background-size: 150vw 90vw;
+	z-index: 9;
+	/* transition: transform 2s ease; */
+	/* animation: plane1anim 10s infinite alternate; */
+}
+
+@keyframes plane1anim {
+  from {transform: translateZ(-35vw) translateY(30vh) rotateX(-14deg) rotateY(-14deg);}
+  to {transform: translateZ(-35vw) translateY(30vh) rotateX(-1deg) rotateY(-50deg);}
+}
+
+#plane2{
+	position: absolute;
+	width: 70vw;
+	height: 40vw;
+	transform-style: preserve-3d;
+	transform: translateZ(-35vw) translateX(68vh) translateY(-17vh) rotateX(60deg) rotateY(-10deg) rotateZ(20deg);
+	background-image: url("mushrooms_top.gif");
+	/* background-color: green; */
+	background-position: center;
+	background-size: 100% 100%
+	/* transition: transform 2s ease; */
+	/* animation: plane2anim 7s infinite alternate; */
+	z-index: 10;
+}
+
+@keyframes plane2anim {
+  from { transform: translateZ(-35vw) translateX(60vh) translateY(-10vh) rotateX(34deg) rotateY(04deg);}
+  to {transform: translateZ(-35vw) translateX(60vh) translateY(-10vh) rotateX(54deg) rotateY(14deg);}
+}
+
+#plane3{
+	position: absolute;
+	width: 70vw;
+	height: 40vw;
+	transform-style: preserve-3d;
+	transform: translateZ(-35vw) translateX(55vh) translateY(33.5vh) rotateX(-25deg) rotateY(-15deg) rotateZ(-4deg);
+	background-image: url("mushrooms_bottom.gif");
+	background-color: red;
+	background-position: center;
+	background-size: 70vw 40vw;
+	z-index: 11;
+	/* transition: transform 2s ease; */
+	/* animation: plane3anim 9s infinite alternate; */
+}
+
+@keyframes plane3anim {
+  from {transform: translateZ(-35vw) translateX(60vh) translateY(50vh) rotateX(-34deg) rotateY(-6deg);}
+  to {transform: translateZ(-35vw) translateX(60vh) translateY(50vh) rotateX(-54deg) rotateY(-18deg);}
+}
+
+#plane4{
+	position: absolute;
+	width: 40vw;
+	height: 35vw;
+	transform-style: preserve-3d;
+	transform: translateZ(-30vw) translateX(00vh) translateY(-20vh) rotateX(-05deg) rotateY(10deg) rotateZ(05deg);
+	background-image: url("clams_1.gif");
+	/* background-color: purple; */
+	background-position: center;
+	background-size: 100% 100%
+	/* transition: transform 2s ease; */
+	/* animation: plane4anim 19s infinite alternate; */
+	z-index: 13;
+}
+
+@keyframes plane4anim {
+  from {transform: translateZ(-35vw) rotateX(14deg) rotateY(14deg);}
+  to {transform: translateZ(-35vw) rotateX(1deg) rotateY(64deg);}
+}
