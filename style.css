@@ -60,116 +60,184 @@ body{
 
 #plane1{
 	position: absolute;
-	width: 150vw;
-	height: 90vw;
+	width: 150rem;
+	height: 90rem;
+	top: -20rem;
+	left: -40rem;
 	transform-style: preserve-3d;
-	transform: translateZ(-30vw) translateY(26vh) translateX(-56vw) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;
-	background-image: url("halcyon1.gif");
+	transform: translateZ(-70rem) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;
+	background-image: url("elephant.gif");
 	background-color: yellow;
 	background-position: center;
-	background-size: 150vw 90vw;
+	background-size: 150rem 90rem;
 	z-index: 9;
-	animation: plane1anim 69s infinite linear;
+	animation: plane1anim 69s infinite alternate linear;
 }
 
 @keyframes plane1anim {
-  from {transform: translateZ(-30vw) translateY(26vh) translateX(-56vw) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;}
-  to {transform: translateZ(-30vw) translateY(26vh) translateX(-56vw) rotateY(429deg) rotateZ(10deg) rotateX(10deg) ;}
+  from {transform: translateZ(-70rem) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;}
+  to {transform: translateZ(-37rem) rotateY(-70deg) rotateZ(10deg) rotateX(10deg) ;}
 }
 
-#cube{
-	width: 70vw;
-	height: 70vw;
+@media only screen and (min-width: 600){
+	#plane1{
+		position: absolute;
+		width: 150rem;
+		height: 90rem;
+		top: -20rem;
+		left: -40rem;
+		transform-style: preserve-3d;
+		transform: translateZ(-70rem) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;
+		background-image: url("elephant.gif");
+		background-color: yellow;
+		background-position: center;
+		background-size: 150rem 90rem;
+		z-index: 9;
+		animation: plane1anim 69s infinite linear;
+	}
+
+	@keyframes plane1anim {
+	  from {transform: translateZ(-70rem) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;}
+	  to {transform: translateZ(-37rem) rotateY(429deg) rotateZ(10deg) rotateX(10deg) ;}
+	}
+}
+
+#cube2{
+	width: 20rem;
+	height: 20rem;
 	position: fixed;
 	transform-style: preserve-3d;
-	transform: translateX(60vw) translateY(10vh) translateZ(-35vw) rotateX(-24deg) rotateY(-22deg) rotateZ(-5deg);
-	transition: transform 2s ease;
-	animation: cubeSpin 40s infinite linear;
+	transform: translateZ(-35vw) rotateX(-24deg) rotateY(-22deg) rotateZ(-5deg);
+	animation: cube2Spin 40s infinite linear;
 	z-index: 9999;
 }
 
-@keyframes cubeSpin {
-	0% {transform: translateX(60vw) translateY(0vh) translateZ(-35vw) rotateX(0deg) rotateY(-10deg) rotateZ(-5deg)}
-	100% {transform: translateX(60vw) translateY(0vh) translateZ(-35vw) rotateX(359deg) rotateY(-10deg) rotateZ(-5deg)}
+@keyframes cube2Spin {
+	0% {transform: translateZ(-35vw) rotateX(-24deg) rotateY(0deg) rotateZ(-5deg);}
+	100% {transform: translateZ(-35vw) rotateX(-24deg) rotateY(359deg) rotateZ(-5deg);}
 }
 
-#cubeFace1{
+#cube2Face1{
 	position: absolute;
-	width: 70vw;
-	height: 40vw;
+	width: 20rem;
+	height: 20rem;
 	transform-style: preserve-3d;
-	transform: rotateY(  0deg) translateZ(20vw);
+	transform: rotateY(  0deg) translateZ(10rem);
+	background-image: url("clams_1.gif");
+	/* background-color: purple; */
+	background-position: center;
+	background-size: 100% 100%
+}
+#cube2Face2{
+	position: absolute;
+	width: 20rem;
+	height: 20rem;
+	transform-style: preserve-3d;
+	transform:  rotateY( -90deg) translateZ(10rem);
+	background-image: url("clams_1.gif");
+	/* background-color: purple; */
+	background-position: center;
+	background-size: 100% 100%
+}
+#cube2Face3{
+	position: absolute;
+	width: 20rem;
+	height: 20rem;
+	transform-style: preserve-3d;
+	transform:  rotateY(-180deg) translateZ(10rem); 
+	background-image: url("clams_1.gif");
+	/* background-color: purple; */
+	background-position: center;
+	background-size: 100% 100%
+}
+#cube2Face4{
+	position: absolute;
+	width: 20rem;
+	height: 20rem;
+	transform-style: preserve-3d;
+	transform:  rotateY(  90deg) translateZ(10rem) ;
+	background-image: url("clams_1.gif");
+	/* background-color: purple; */
+	background-position: center;
+	background-size: 100% 100%
+}
+
+
+#cube1{
+	left: 30vw;
+	width: 70rem;
+	height: 70rem;
+	position: fixed;
+	transform-style: preserve-3d;
+	transform: translateZ(-35rem) rotateX(-24deg) rotateY(-22deg) rotateZ(-5deg);
+	animation: cube1Spin 60s infinite linear;
+	z-index: 9999;
+}
+
+@keyframes cube1Spin {
+	0% {transform: translateZ(-35rem) rotateX(0deg) rotateY(-10deg) rotateZ(-5deg)}
+	100% {transform: translateZ(-35rem) rotateX(359deg) rotateY(-10deg) rotateZ(-5deg)}
+}
+
+#cube1Face1{
+	position: absolute;
+	width: 70rem;
+	height: 40rem;
+	transform-style: preserve-3d;
+	transform: rotateY(  0deg) translateZ(20rem);
 	background-image: url("mushrooms_top.gif");
 	background-color: green;
 	background-position: center;
 	background-size: 100% 100%;
 	/* transition: transform 2s ease; */
 	/* animation: plane2anim 7s infinite alternate; */
-	transform: rotateY(  0deg) translateZ(20vw);
+	transform: rotateY(  0deg) translateZ(20rem);
 }
 
 
 
-#cubeFace2{
+#cube1Face2{
 	position: absolute;
-	width: 70vw;
-	height: 40vw;
+	width: 70rem;
+	height: 40rem;
 	transform-style: preserve-3d;
-	transform: rotateX( 90deg) translateZ(20vw);
+	transform: rotateX( 90deg) translateZ(20rem);
 	background-image: url("mushrooms_bottom.gif");
 	background-color: red;
 	background-position: center;
-	background-size: 70vw 40vw;
+	background-size: 70rem 40rem;
 	/* transition: transform 2s ease; */
 	/* animation: plane3anim 9s infinite alternate; */
 }
 
-#cubeFace3{
+#cube1Face3{
 	position: absolute;
-	width: 70vw;
-	height: 40vw;
+	width: 70rem;
+	height: 40rem;
 	transform-style: preserve-3d;
-	transform: rotateY(180deg) translateZ(20vw);
+	transform: rotateX(180deg) translateZ(20rem);
 	background-image: url("mushrooms_top.gif");
 	background-color: red;
 	background-position: center;
-	background-size: 70vw 40vw;
+	background-size: 70rem 40rem;
 	/* transition: transform 2s ease; */
 	/* animation: plane3anim 9s infinite alternate; */
 }
 
-#cubeFace4{
+#cube1Face4{
 	position: absolute;
-	width: 70vw;
-	height: 40vw;
+	width: 70rem;
+	height: 40rem;
 	transform-style: preserve-3d;
-	transform: rotateX(-90deg) translateZ(20vw);
+	transform: rotateX(-90deg) translateZ(20rem);
 	background-image: url("mushrooms_bottom.gif");
 	background-color: red;
 	background-position: center;
-	background-size: 70vw 40vw;
+	background-size: 70rem 40rem;
 	/* transition: transform 2s ease; */
 	/* animation: plane3anim 9s infinite alternate; */
 }
 
 
 
-#plane4{
-	position: absolute;
-	width: 40vw;
-	height: 35vw;
-	transform-style: preserve-3d;
-	transform: translateZ(-30vw) translateX(00vh) translateY(-20vh) rotateX(-05deg) rotateY(10deg) rotateZ(05deg);
-	background-image: url("clams_1.gif");
-	/* background-color: purple; */
-	background-position: center;
-	background-size: 100% 100%
-	/* transition: transform 2s ease; */
-	/* animation: plane4anim 19s infinite alternate; */
-	z-index: 13;
-}
 
-@keyframes plane4anim {
-  from {transform: translateZ(-35vw) rotateX(14deg) rotateY(14deg);}
-  to {transform: translateZ(-35vw) rotateX(1deg) rotateY(64deg);}
-}
