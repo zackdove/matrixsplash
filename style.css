@@ -19,8 +19,6 @@ body{
 	}
 }
 
-
-
 #splashTitle{
 	display: flex;
 	align-items: center;
@@ -31,7 +29,7 @@ body{
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
-	z-index: 1;
+	z-index: 100;
 	color: white;
 	text-align: center;
 }
@@ -39,8 +37,6 @@ body{
 #splashTitle p {
 	max-width: 60vw;
 	color: white;
-	/* filter: invert(100%); */
-	mix-blend-mode: difference;
 }
 
 @media only screen and (max-width: 600px){
@@ -48,7 +44,6 @@ body{
 		max-width: 70vw;
 	}
 }
-
 
 #planeContainer{
 	width: 100vw;
@@ -67,7 +62,6 @@ body{
 	transform-style: preserve-3d;
 	transform: translateZ(-70rem) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;
 	background-image: url("elephant.gif");
-	/* background-color: yellow; */
 	background-position: center;
 	background-size: 150rem 90rem;
 	z-index: 9;
@@ -89,7 +83,6 @@ body{
 		transform-style: preserve-3d;
 		transform: translateZ(-70rem) rotateY(70deg) rotateZ(10deg) rotateX(10deg) ;
 		background-image: url("elephant.gif");
-		/* background-color: yellow; */
 		background-position: center;
 		background-size: 150rem 90rem;
 		z-index: 9;
@@ -101,67 +94,6 @@ body{
 	  to {transform: translateZ(-37rem) rotateY(429deg) rotateZ(10deg) rotateX(10deg) ;}
 	}
 }
-
-#cube2{
-	width: 20rem;
-	height: 20rem;
-	position: fixed;
-	transform-style: preserve-3d;
-	transform: translateZ(-35vw) rotateX(-24deg) rotateY(-22deg) rotateZ(-5deg);
-	animation: cube2Spin 40s infinite linear;
-	z-index: 9999;
-}
-
-@keyframes cube2Spin {
-	0% {transform: translateZ(-35vw) rotateX(-24deg) rotateY(0deg) rotateZ(-5deg);}
-	100% {transform: translateZ(-35vw) rotateX(-24deg) rotateY(359deg) rotateZ(-5deg);}
-}
-
-#cube2Face1{
-	position: absolute;
-	width: 20rem;
-	height: 20rem;
-	transform-style: preserve-3d;
-	transform: rotateY(  0deg) translateZ(10rem);
-	background-image: url("clams_1.gif");
-	/* background-color: purple; */
-	background-position: center;
-	background-size: 100% 100%
-}
-#cube2Face2{
-	position: absolute;
-	width: 20rem;
-	height: 20rem;
-	transform-style: preserve-3d;
-	transform:  rotateY( -90deg) translateZ(10rem);
-	background-image: url("clams_1.gif");
-	/* background-color: purple; */
-	background-position: center;
-	background-size: 100% 100%
-}
-#cube2Face3{
-	position: absolute;
-	width: 20rem;
-	height: 20rem;
-	transform-style: preserve-3d;
-	transform:  rotateY(-180deg) translateZ(10rem); 
-	background-image: url("clams_1.gif");
-	/* background-color: purple; */
-	background-position: center;
-	background-size: 100% 100%
-}
-#cube2Face4{
-	position: absolute;
-	width: 20rem;
-	height: 20rem;
-	transform-style: preserve-3d;
-	transform:  rotateY(  90deg) translateZ(10rem) ;
-	background-image: url("clams_1.gif");
-	/* background-color: purple; */
-	background-position: center;
-	background-size: 100% 100%
-}
-
 
 #cube1{
 	left: 30vw;
@@ -179,64 +111,71 @@ body{
 	100% {transform: translateZ(-35rem) rotateX(359deg) rotateY(-10deg) rotateZ(-5deg)}
 }
 
-#cube1Face1{
+.cube1Face{
 	position: absolute;
 	width: 70rem;
 	height: 40rem;
 	transform-style: preserve-3d;
-	transform: rotateY(  0deg) translateZ(20rem);
-	background-image: url("mushrooms_top.gif");
-	/* background-color: green; */
 	background-position: center;
 	background-size: 100% 100%;
-	/* transition: transform 2s ease; */
-	/* animation: plane2anim 7s infinite alternate; */
+}
+
+#cube1Face1{
+	background-image: url("mushrooms_top.gif");
 	transform: rotateY(  0deg) translateZ(20rem);
 }
-
-
-
 #cube1Face2{
-	position: absolute;
-	width: 70rem;
-	height: 40rem;
-	transform-style: preserve-3d;
 	transform: rotateX( 90deg) translateZ(20rem);
 	background-image: url("mushrooms_bottom.gif");
-	/* background-color: red; */
-	background-position: center;
-	background-size: 70rem 40rem;
-	/* transition: transform 2s ease; */
-	/* animation: plane3anim 9s infinite alternate; */
 }
-
 #cube1Face3{
-	position: absolute;
-	width: 70rem;
-	height: 40rem;
-	transform-style: preserve-3d;
 	transform: rotateX(180deg) translateZ(20rem);
 	background-image: url("mushrooms_top.gif");
-	/* background-color: red; */
-	background-position: center;
-	background-size: 70rem 40rem;
-	/* transition: transform 2s ease; */
-	/* animation: plane3anim 9s infinite alternate; */
 }
-
 #cube1Face4{
-	position: absolute;
-	width: 70rem;
-	height: 40rem;
-	transform-style: preserve-3d;
 	transform: rotateX(-90deg) translateZ(20rem);
 	background-image: url("mushrooms_bottom.gif");
-	/* background-color: red; */
-	background-position: center;
-	background-size: 70rem 40rem;
-	/* transition: transform 2s ease; */
-	/* animation: plane3anim 9s infinite alternate; */
 }
+
+#cube2{
+	width: 20rem;
+	height: 20rem;
+	position: fixed;
+	transform-style: preserve-3d;
+	transform: translateZ(-35vw) rotateX(-24deg) rotateY(-22deg) rotateZ(-5deg);
+	animation: cube2Spin 40s infinite linear;
+	z-index: 99;
+}
+
+@keyframes cube2Spin {
+	0% {transform: translateZ(-35vw) rotateX(-24deg) rotateY(0deg) rotateZ(-5deg);}
+	100% {transform: translateZ(-35vw) rotateX(-24deg) rotateY(359deg) rotateZ(-5deg);}
+}
+
+.cube2Face{
+	position: absolute;
+	width: 20rem;
+	height: 20rem;
+	transform-style: preserve-3d;
+	background-position: center;
+	background-size: 100% 100%;
+	background-image: url("clams.gif");
+}
+
+#cube2Face1{
+	transform: rotateY(  0deg) translateZ(10rem);
+}
+#cube2Face2{
+	transform:  rotateY( -90deg) translateZ(10rem);
+}
+#cube2Face3{
+	transform:  rotateY(-180deg) translateZ(10rem);
+}
+#cube2Face4{
+	transform:  rotateY(  90deg) translateZ(10rem) ;
+}
+
+
 
 
 
